@@ -5,9 +5,9 @@
 
 FROM amazoncorretto:17-alpine-jdk
 
-MAINTAINER backend
+MAINTAINER cml
 
 COPY target/cml.0.0.1-SNAPSHOT.jar cml.0.0.1-SNAPSHOT.jar.jar
 
 ENTRYPOINT ["java","-jar","/cml.0.0.1-SNAPSHOT.jar"]
-CMD ["/bin/sh"]
+
