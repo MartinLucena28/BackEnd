@@ -1,5 +1,6 @@
 FROM amazoncorretto:11-alpine-jdk
 MAINTAINER cml
-COPY  target/cml-0.0.1-SNAPSHOT cml-app.jar
+ADD target/cml-0.0.1-SNAPSHOT cml-app.jar
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","/cml-app.jar"]
 
