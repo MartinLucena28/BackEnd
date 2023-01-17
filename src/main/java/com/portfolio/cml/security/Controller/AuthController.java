@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.cml.security.Controller;
 
+import com.portfolio.cml.security.Controller.Mensaje;
 import com.portfolio.cml.security.Dto.JwtDto;
 import com.portfolio.cml.security.Dto.LoginUsuario;
 import com.portfolio.cml.security.Dto.NuevoUsuario;
@@ -35,7 +32,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins ="https://frontendcml.web.app")
+@CrossOrigin(origins = {"https://frontendcml.web.app","*"})
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -48,9 +45,9 @@ public class AuthController {
     @Autowired
     JwtProvider jwtProvider;
     
-   @PostMapping("/nuevo") 
-   public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
-      if(bindingResult.hasErrors())
+    @PostMapping("/nuevo")
+    public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
+        if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Campos mal puestos o email invalido"),HttpStatus.BAD_REQUEST);
         
         if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))
