@@ -1,7 +1,6 @@
 package com.portfolio.cml.security.Controller;
 
-import com.portfolio.cml.security.Controller.Mensaje;
-import com.portfolio.cml.security.Dto.JwtDto;
+import com.portfolio.cml.Security.Dto.JwtDto;
 import com.portfolio.cml.security.Dto.LoginUsuario;
 import com.portfolio.cml.security.Dto.NuevoUsuario;
 import com.portfolio.cml.security.Entity.Rol;
@@ -31,8 +30,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("/auth")
-@CrossOrigin(origins = {"*"})
+@RequestMapping("auth")
+@CrossOrigin(origins = {"https://frontendcml.web.app/","http://localhost:4200/"})
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;

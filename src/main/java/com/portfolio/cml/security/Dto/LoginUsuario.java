@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 
 /**
  *
- * @author pc
+ * @author Usuario
  */
 public class LoginUsuario {
     @NotBlank

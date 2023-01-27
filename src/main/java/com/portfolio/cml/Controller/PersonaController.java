@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.portfolio.cml.Controller;
 
 import com.portfolio.cml.Dto.DtoPersona;
@@ -23,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "https://frontendcml.web.app")
+@CrossOrigin(origins = {"https://frontendcml.web.app","http://localhost:4200"})
 
 public class PersonaController {
     
@@ -67,6 +64,6 @@ public class PersonaController {
         persona.setImg(dtopersona.getImg());
         personaService.save(persona);
         
-        return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Persona actualizada"), HttpStatus.OK);
     }
 }
