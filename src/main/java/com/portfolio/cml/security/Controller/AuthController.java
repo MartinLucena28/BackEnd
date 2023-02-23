@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("auth")
-@CrossOrigin(origins = {"https://frontendcml.web.app/","http://localhost:4200/"})
+@RequestMapping("/auth")
+@CrossOrigin(origins = {"https://frontendcml.web.app","http://localhost:4200"})
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
